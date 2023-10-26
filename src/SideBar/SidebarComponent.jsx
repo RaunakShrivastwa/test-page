@@ -2,20 +2,20 @@ import React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function SidebarComponent() {
-    const [styles] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
-    // const changeStyle =()=> {
-    //     if(styles == "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion") {
-    //         setStyle = "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled";
-    //     }else {
-    //         setStyle = "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion";
-    //     }
-    // }
+    const [styles,setStyle] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
+    const changeStyle =()=> {
+        if(styles == "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion") {
+            setStyle = "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled";
+        }else {
+            setStyle = "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion";
+        }
+    }
     return (
         <>
             <ul className={styles} id="accordionSidebar">
 
                 {/* <!-- Sidebar - Brand --> */}
-                <Link class="sidebar-brand d-flex align-items-center justify-content-center" to="#">
+                <Link class="sidebar-brand d-flex align-items-center justify-content-center" to="">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <img className='prop' src="https://scontent.fpat3-1.fna.fbcdn.net/v/t39.30808-6/288313501_734102424400486_2834910633717808723_n.jpg?stp=c0.59.720.720a_dst-jpg_s851x315&_nc_cat=105&ccb=1-7&_nc_sid=c21ed2&_nc_ohc=6W3s4mejFAMAX_iLE2D&_nc_ht=scontent.fpat3-1.fna&oh=00_AfDQhfxxeIeCcblSSmdEaOhJqqK-yFa4wEKvBZc1CQL1Aw&oe=64DFF60E" alt="" />
                     </div>
@@ -27,7 +27,7 @@ function SidebarComponent() {
 
                 {/* <!-- Nav Item - Dashboard --> */}
                 <li class="nav-item active">
-                    <Link class="nav-Link" to="index.html">
+                    <Link class="nav-link" to="index.html">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></Link>
                 </li>
@@ -42,7 +42,7 @@ function SidebarComponent() {
 
                 {/* <!-- Nav Item - Pages Collapse Menu --> */}
                 <li class="nav-item">
-                    <Link class="nav-Link collapsed" to="#" data-toggle="collapse" data-target="#collapseTwo"
+                    <Link class="nav-link collapsed" to="#" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>Student</span>
@@ -59,7 +59,7 @@ function SidebarComponent() {
 
                 {/* <!-- Nav Item - Utilities Collapse Menu --> */}
                 <li class="nav-item">
-                    <Link class="nav-Link collapsed" to="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    <Link class="nav-link collapsed" to="#" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-wrench"></i>
                         <span>Teacher</span>
@@ -86,7 +86,7 @@ function SidebarComponent() {
 
                 {/* <!-- Nav Item - Pages Collapse Menu --> */}
                 <li class="nav-item">
-                    <Link class="nav-Link collapsed" to="#" data-toggle="collapse" data-target="#collapsePages"
+                    <Link class="nav-link collapsed" to="#" data-toggle="collapse" data-target="#collapsePages"
                         aria-expanded="true" aria-controls="collapsePages">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Amount</span>
@@ -102,7 +102,7 @@ function SidebarComponent() {
 
                 {/* <!-- Nav Item - Charts --> */}
                 <li class="nav-item">
-                    <Link class="nav-Link collapsed" to="#" data-toggle="collapse" data-target="#collapseBatch"
+                    <Link class="nav-link collapsed" to="#" data-toggle="collapse" data-target="#collapseBatch"
                         aria-expanded="true" aria-controls="collapseBatch">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Batches</span>
@@ -120,7 +120,7 @@ function SidebarComponent() {
                 {/* for the chapter */}
 
                 <li class="nav-item">
-                    <Link class="nav-Link collapsed" to="#" data-toggle="collapse" data-target="#collapseChapter"
+                    <Link class="nav-link collapsed" to="#" data-toggle="collapse" data-target="#collapseChapter"
                         aria-expanded="true" aria-controls="collapseCourse">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Chapter</span>
@@ -138,7 +138,7 @@ function SidebarComponent() {
 
                 {/* for the course */}
                 <li class="nav-item">
-                    <Link class="nav-Link collapsed" to="#" data-toggle="collapse" data-target="#collapseCourse"
+                    <Link class="nav-link collapsed" to="#" data-toggle="collapse" data-target="#collapseCourse"
                         aria-expanded="true" aria-controls="collapseCourse">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Course</span>
