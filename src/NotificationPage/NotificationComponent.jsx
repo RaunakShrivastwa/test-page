@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function NotificationComponent() {
     const [data, setData] = useState([]);
@@ -18,12 +19,12 @@ console.log(data);
     return (
         <>
             <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                <Link class="nav-Link dropdown-toggle" to="#" id="alertsDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-bell fa-fw"></i>
                     {/* <!-- Counter - Alerts --> */}
                     <span class="badge badge-danger badge-counter">{data.length}+</span>
-                </a>
+                </Link>
                 {/* <!-- Notifications--> */}
                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in noti "
                     aria-labelledby="alertsDropdown">
@@ -34,7 +35,7 @@ console.log(data);
                         {
                             data.map((temp) => (
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <Link class="dropdown-item d-flex align-items-center" to="#">
                                         <div class="mr-3">
                                             <div class="icon-circle bg-success">
                                                 <i class="fas fa-donate text-white"></i>
@@ -44,32 +45,13 @@ console.log(data);
                                             <div class="small text-gray-500">{temp.date}</div>
                                             {temp.message}
                                         </div>
-                                    </a>
+                                    </Link>
                                 </li>
                             ))
                         }
 
 
-
-
-
-
-
-
-
-                        {/* <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-success">
-                                        <i class="fas fa-donate text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 7, 2019</div>
-                                    $290.29 has been deposited into your account!
-                                </div>
-                            </a>
-                        </li> */}
+                        
                     </ul>
                 </div>
             </li>

@@ -8,7 +8,6 @@ import EditCourse from './course/EditCourse';
 import EditChapter from './Chapter/EditChapter'
 import AddChapter from './Chapter/AddChapter'
 import ViewChapter from './Chapter/ViewChapter'
-import message from './Chapter/message';
 
 // import Demo from './Demo';
 function App() {

@@ -1,41 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import LineChartComponent from '../LineChart/LineChartComponent'
 import PieChartComponent from '../PieChart/PieChartComponent'
 import SidebarComponent from '../SideBar/SidebarComponent'
 import SummaryComponent from '../Summary/SummaryComponent'
 import NotificationComponent from '../NotificationPage/NotificationComponent'
-import { useParams } from 'react-router-dom';
-import axios from 'axios'
+import { useParams ,Link} from 'react-router-dom';
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 function Dashboard() {
     const { id } = useParams()
-    const [student, setStudent] = useState([]);
+    const [student] = useState([]);
     console.log("profile user ",id)
-   
-  let l=0;
-  useEffect(()=>{
-    loadUser();
-    if(l===0){  
-        l+=1;
-        toast.success(`Congractulation You LogedIn as Admin😎😎`, { 
-            position: 'top-right',
-            autoClose: 3000, // Duration in milliseconds
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-        
-            
-          })
-        }
-  },[])
-   const loadUser= async ()=>{
-    const studentData = await axios(`https://ninjassite-production.up.railway.app/getStudentData/${id}`).then(result => {
-        setStudent(result.data);
-    })
-   }
+//    const loadUser= async ()=>{
+//     await axios(`https://ninjassite-production.up.railway.app/getStudentData/${id}`).then(result => {
+//         setStudent(result.data);
+//     })
+//    }
     return (
         <>
             <body id="page-top">
@@ -57,7 +38,7 @@ function Dashboard() {
                             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                                 {/* <!-- Sidebar Toggle (Topbar) --> */}
-                                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                                <button id="sidebarToggleTop" class="btn btn-Link d-md-none rounded-circle mr-3">
                                     <i class="fa fa-bars"></i>
                                 </button>
 
@@ -80,10 +61,10 @@ function Dashboard() {
 
                                     {/* <!-- Nav Item - Search Dropdown (Visible Only XS) --> */}
                                     <li class="nav-item dropdown no-arrow d-sm-none">
-                                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                        <Link class="nav-Link dropdown-toggle" to="#" id="searchDropdown" role="button"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-search fa-fw"></i>
-                                        </a>
+                                        </Link>
                                         {/* <!-- Dropdown - Messages --> */}
                                         <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                             aria-labelledby="searchDropdown">
@@ -107,15 +88,13 @@ function Dashboard() {
 
                                     {/* <!-- Nav Item - User Information --> */}
                                     <li class="nav-item dropdown no-arrow">
-                                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                        <Link class="nav-Link dropdown-toggle" to="#" id="userDropdown" role="button"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">{student.fname} &nbsp; {student.lname}</span>
-                                            <img class="img-profile rounded-circle"
+                                            <img class="img-profile rounded-circle" alt='abc.jpg'
                                                 src={`data:image/png/jpg/jpeg;base64,${student.image}`} />
-                                        </a>
+                                        </Link>
                                        
-                                       
-                                        <ToastContainer />
                                         {/* for the login notification */}
                                         <div class="toast-container position-fixed bottom-0 end-0 p-3">
                                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -134,23 +113,23 @@ function Dashboard() {
                                         {/* <!-- Dropdown - User Information --> */}
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                             aria-labelledby="userDropdown">
-                                            <a class="dropdown-item" href="#">
+                                            <Link class="dropdown-item" to="#">
                                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Profile
-                                            </a>
-                                            <a class="dropdown-item" href="#">
+                                            </Link>
+                                            <Link class="dropdown-item" to="#">
                                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Settings
-                                            </a>
-                                            <a class="dropdown-item" href="#">
+                                            </Link>
+                                            <Link class="dropdown-item" to="#">
                                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Activity Log
-                                            </a>
+                                            </Link>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                            <Link class="dropdown-item" to="#" data-toggle="modal" data-target="#logoutModal">
                                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Logout
-                                            </a>
+                                            </Link>
                                         </div>
                                     </li>
 
@@ -165,8 +144,8 @@ function Dashboard() {
                                 {/* <!-- Page Heading --> */}
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                        class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                                    <Link to="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                        class="fas fa-download fa-sm text-white-50"></i> Generate Report</Link>
                                 </div>
 
                                 {/* <!-- Content Row --> */}
@@ -281,9 +260,9 @@ function Dashboard() {
                 {/* <!-- End of Page Wrapper --> */}
 
                 {/* <!-- Scroll to Top Button--> */}
-                <a class="scroll-to-top rounded" href="#page-top">
+                <Link class="scroll-to-top rounded" to="#page-top">
                     <i class="fas fa-angle-up"></i>
-                </a>
+                </Link>
 
                 {/* <!-- Logout Modal--> */}
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -299,7 +278,7 @@ function Dashboard() {
                             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                             <div class="modal-footer">
                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                <a class="btn btn-primary" href="login.html">Logout</a>
+                                <Link class="btn btn-primary" to="login.html">Logout</Link>
                             </div>
                         </div>
                     </div>
