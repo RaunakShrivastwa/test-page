@@ -121,12 +121,12 @@ function Dashboard() {
                                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Settings
                                             </Link>
-                                            <Link class="dropdown-item" to="http://localhost:9096/home">
+                                            <Link class="dropdown-item" to="https://ninjassite-production.up.railway.app/home">
                                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                                Studen Page
                                             </Link>
                                             <div class="dropdown-divider"></div>
-                                            <Link class="dropdown-item" to="http://localhost:9096/loginPage" data-toggle="modal" data-target="#logoutModal">
+                                            <Link class="dropdown-item" to="https://ninjassite-production.up.railway.app/loginPage" data-toggle="modal" data-target="#logoutModal">
                                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Logout
                                             </Link>
