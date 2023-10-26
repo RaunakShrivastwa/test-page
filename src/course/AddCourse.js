@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Await, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 
 function AddCourse() {
   let navigate = useNavigate();

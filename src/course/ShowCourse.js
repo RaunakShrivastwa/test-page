@@ -17,7 +17,7 @@ function ViewCourse() {
 
     const [chapter,setChapter]=useState([])
 
-    const [subTopic,setSubTopic]=useState([]);
+    // const [subTopic,setSubTopic]=useState([]);
 
 
     const [currentPage, setCurrentPage] = useState(0);
@@ -42,12 +42,12 @@ function ViewCourse() {
         setChapter(result.data)
     }
 
-    const loadShubTopic = async (e) => {     
-        const result = await axios.get(`https://ninjassite-production.up.railway.app/tag/${e.target.id}`)
-        setSubTopic(result.data)
-    }
+    // const loadShubTopic = async (e) => {     
+    //     const result = await axios.get(`https://ninjassite-production.up.railway.app/tag/${e.target.id}`)
+    //     setSubTopic(result.data)
+    // }
 
-     console.log("Your chapter data ",subTopic)
+    //  console.log("Your chapter data ",subTopic)
     const deleteData = async (e) => {
         let id = e.target.id;
         await axios.delete(`https://ninjassite-production.up.railway.app/deleteCourse/${id}`);
@@ -58,10 +58,10 @@ function ViewCourse() {
         navigate(`/editPage/${id}`)
     }
 
-    const handleSelectChange = (event) => {
-        // Prevent changing the selected value
-        event.preventDefault();
-      };
+    // const handleSelectChange = (event) => {
+    //     // Prevent changing the selected value
+    //     event.preventDefault();
+    //   };
     console.log(user)
     return (
         

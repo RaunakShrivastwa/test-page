@@ -15,14 +15,11 @@ function EditCourse() {
     });
 
     useEffect(() => {
-        loadUser();
-      }, []);
-
-    const loadUser= async ()=>{
-       const result= await axios.get(`https://ninjassite-production.up.railway.app/getSingle/${id}`)
-       setCourse(result.data);
-    };
-    console.log(course)
+      (async ()=>{
+        const result= await axios.get(`https://ninjassite-production.up.railway.app/getSingle/${id}`)
+        setCourse(result.data);
+     })() 
+      }, [id]);
     const {title,deadline,name,score}=course;
 
 
